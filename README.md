@@ -1,23 +1,20 @@
-# React + TypeScript + Vite
+# 🎯 Hexagon Badge Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-# 🎯 Hexagon Skill Icons Generator
-
-A React TypeScript application that generates hexagon-shaped skill badges from SkillIcons URLs and downloads them as individual PNG files in a ZIP archive.
+A React TypeScript application that generates hexagon-shaped skill badges from SkillIcons URLs and downloads them as individual PNG files with transparent backgrounds in a ZIP archive.
 
 ## ✨ Features
 
-- **Hexagon Badge Generation**: Creates beautiful hexagon-shaped badges with technology colors
-- **PNG Zip Download**: Downloads all badges as individual PNG files in a ZIP archive
-- **Technology Colors**: Supports 50+ technologies with authentic brand colors
-- **Responsive Design**: Works on desktop and mobile devices
-- **TypeScript**: Built with type safety and modern React patterns
+- **🔷 Hexagon Badge Generation**: Creates beautiful hexagon-shaped badges with technology colors
+- **📦 PNG Zip Download**: Downloads all badges as individual PNG files in a ZIP archive
+- **🎨 Transparent Background**: PNG files have transparent backgrounds for versatile usage
+- **🎨 Technology Colors**: Supports 50+ technologies with authentic brand colors
+- **📱 Responsive Design**: Works perfectly on desktop and mobile devices
+- **⚡ TypeScript**: Built with type safety and modern React patterns
+- **🚀 GitHub Pages**: Automatically deployed via GitHub Actions
+
+## 🌐 Live Demo
+
+Visit the live application: **[https://PhyoeBlitz.github.io/badge-generate/](https://PhyoeBlitz.github.io/badge-generate/)**
 
 ## 🚀 Getting Started
 
@@ -30,7 +27,7 @@ A React TypeScript application that generates hexagon-shaped skill badges from S
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/PhyoeBlitz/badge-generate.git
 cd badge-generate
 ```
 
@@ -44,15 +41,15 @@ npm install
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+4. Open your browser and navigate to `http://localhost:5173/badge-generate/`
 
 ## 📖 Usage
 
 1. **Enter a SkillIcons URL** in the input field (e.g., `https://skillicons.dev/icons?i=ts,react,python,aws`)
 2. **Click "Generate Hexagon Badges"** to create the badges
-3. **Click "Save All as PNG Zip"** to download all badges as individual PNG files in a ZIP archive
+3. **Click "Save All as PNG Zip"** to download all badges as individual PNG files with transparent backgrounds
 
-### Example URLs
+### 💡 Example URLs
 
 - Single Icon: `https://skillicons.dev/icons?i=ts`
 - Frontend Stack: `https://skillicons.dev/icons?i=js,ts,react,vue`
@@ -62,13 +59,14 @@ npm run dev
 
 ## 🛠️ Technology Stack
 
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **JSZip** - ZIP file creation
-- **CSS3** - Styling with hexagon shapes
+- **⚛️ React 18** - Modern UI library with hooks
+- **🔷 TypeScript** - Type safety and better development experience
+- **⚡ Vite** - Fast build tool and development server
+- **📦 JSZip** - Client-side ZIP file creation
+- **🎨 CSS3** - Advanced styling with hexagon clip-path
+- **🔄 GitHub Actions** - Automated deployment to GitHub Pages
 
-## 📦 Supported Technologies
+## 🎯 Supported Technologies
 
 The app supports 50+ technologies including:
 
@@ -78,50 +76,43 @@ The app supports 50+ technologies including:
 - **Databases**: MySQL, PostgreSQL, MongoDB, Redis
 - **Tools**: Git, GitHub, GitLab, VS Code, Figma
 
-## 🎨 Features
+## ✨ Key Features
 
-- **Authentic Colors**: Each technology badge uses official brand colors
-- **High Resolution**: 2x scale PNG output for crisp quality
-- **Hexagon Shapes**: Perfect hexagon clipping with CSS
-- **Hover Effects**: Interactive animations and scaling
-- **Mobile Responsive**: Adapts to different screen sizes
+- **🎨 Authentic Colors**: Each technology badge uses official brand colors
+- **🔍 High Resolution**: 2x scale PNG output for crisp quality at any size
+- **🔷 Perfect Hexagons**: CSS clip-path creates perfect geometric shapes
+- **✨ Hover Effects**: Interactive animations and scaling on hover
+- **📱 Mobile Responsive**: Seamlessly adapts to different screen sizes
+- **🌟 Transparent PNGs**: Perfect for overlaying on any background
+- **⚡ Fast Performance**: Client-side processing with no server dependencies
 
-## 📄 Scripts
+## 🚀 Deployment
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+This project is automatically deployed to GitHub Pages using GitHub Actions. Every push to the main branch triggers:
+
+1. **Build Process**: Compiles TypeScript and bundles assets
+2. **Optimization**: Minifies code and optimizes images  
+3. **Deployment**: Automatically publishes to GitHub Pages
+
+## � Scripts
+
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build optimized production bundle
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality checks
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [GPL-3.0 license](LICENSE).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Built with ❤️ by [PhyoeBlitz](https://github.com/PhyoeBlitz)**
