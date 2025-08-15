@@ -71,25 +71,27 @@ function App() {
         (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
   };
 
-  const generateHexagons = () => {
+  const generateHexagons = (urlToUse?: string) => {
+    const targetUrl = urlToUse || inputUrl;
+    
     setErrorMessage('');
     setSuccessMessage('');
     setIsGenerating(true);
 
-    if (!inputUrl.trim()) {
+    if (!targetUrl.trim()) {
       setErrorMessage('Please enter a Skill Icons URL');
       setIsGenerating(false);
       return;
     }
 
-    if (!inputUrl.includes('skillicons.dev/icons?i=')) {
+    if (!targetUrl.includes('skillicons.dev/icons?i=')) {
       setErrorMessage('Invalid URL format. Please use: https://skillicons.dev/icons?i=iconname');
       setIsGenerating(false);
       return;
     }
 
     try {
-      const url = new URL(inputUrl);
+      const url = new URL(targetUrl);
       const iconsParam = url.searchParams.get('i');
 
       if (!iconsParam) {
@@ -259,6 +261,11 @@ function App() {
     setIsDownloading(false);
   };
 
+  const handleExampleClick = (url: string) => {
+    setInputUrl(url);
+    generateHexagons(url);
+  };
+
   const exampleUrls = [
     { label: 'Single Icon', url: 'https://skillicons.dev/icons?i=ts' },
     { label: 'Frontend Stack', url: 'https://skillicons.dev/icons?i=js,ts,react,vue' },
@@ -280,13 +287,13 @@ function App() {
             value={inputUrl}
             onChange={(e) => setInputUrl(e.target.value)}
             placeholder="https://skillicons.dev/icons?i=ts,react,python,aws"
-            onKeyPress={(e) => e.key === 'Enter' && generateHexagons()}
+            onKeyDown={(e) => e.key === 'Enter' && generateHexagons()}
           />
         </div>
         
         <button 
           className="btn" 
-          onClick={generateHexagons}
+          onClick={() => generateHexagons()}
           disabled={isGenerating}
         >
           {isGenerating ? 'Generating...' : 'Generate Hexagon Badges'}
@@ -341,7 +348,7 @@ function App() {
               <div 
                 key={index}
                 className="example-link" 
-                onClick={() => setInputUrl(example.url)}
+                onClick={() => handleExampleClick(example.url)}
               >
                 <strong>{example.label}:</strong><br />
                 <code>{example.url}</code>
