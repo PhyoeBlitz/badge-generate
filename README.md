@@ -94,7 +94,7 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 2. **Optimization**: Minifies code and optimizes images  
 3. **Deployment**: Automatically publishes to GitHub Pages
 
-## � Scripts
+## 📜 Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build optimized production bundle
