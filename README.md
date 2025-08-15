@@ -109,7 +109,14 @@ This project is automatically deployed to GitHub Pages using GitHub Actions. Eve
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## � Acknowledgments
+
+This project is powered by [SkillIcons](https://skillicons.dev/) - an amazing service that provides beautiful tech stack icons. Special thanks to:
+
+- **[SkillIcons](https://github.com/tandpfun/skill-icons)** by [@tandpfun](https://github.com/tandpfun) - For providing the awesome skill icons API
+- **Technology Communities** - For creating and maintaining the iconic logos and brand colors
+
+## �📝 License
 
 This project is open source and available under the [GPL-3.0 license](LICENSE).
 
