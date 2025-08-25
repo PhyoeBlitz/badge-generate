@@ -123,7 +123,7 @@ function App() {
             iconUrl: `https://skillicons.dev/icons?i=${cleanIcon}`
           };
         })
-        .filter(Boolean);
+         .filter((item): item is HexagonData => item !== null);
 
       setHexagons(hexagonData);
       setSuccessMessage(`Successfully generated ${icons.length} hexagon badge(s)!`);
