@@ -108,15 +108,22 @@ function App() {
         return;
       }
 
-      const hexagonData: HexagonData[] = icons.map(icon => {
-        const cleanIcon = icon.trim();
-        const techInfo = techColors[cleanIcon.toLowerCase()] || { bg: '#667eea', name: cleanIcon };
-        return {
-          iconName: cleanIcon,
-          techInfo,
-          iconUrl: `https://skillicons.dev/icons?i=${cleanIcon}`
-        };
-      });
+      const hexagonData: HexagonData[] = icons
+        .map(icon => {
+          const cleanIcon = icon.trim();
+          // Icon name can only be letters, digits, hyphen or underscore
+          if (!/^[a-zA-Z0-9_-]+$/.test(cleanIcon)) {
+            // Optionally skip or sanitize; here we skip the invalid icon
+            return null;
+          }
+          const techInfo = techColors[cleanIcon.toLowerCase()] || { bg: '#667eea', name: cleanIcon };
+          return {
+            iconName: cleanIcon,
+            techInfo,
+            iconUrl: `https://skillicons.dev/icons?i=${cleanIcon}`
+          };
+        })
+         .filter((item): item is HexagonData => item !== null);
 
       setHexagons(hexagonData);
       setSuccessMessage(`Successfully generated ${icons.length} hexagon badge(s)!`);
